@@ -1,0 +1,1427 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Themis - Settings</title>
+    <meta name="description" content="A demo landing page for agencies or product oriented businesses built using Shards, a free, modern and lightweight UI toolkit based on Bootstrap 4.">
+    <meta name="viewport" content="width=650, initial-scale=1">
+
+    <!-- CSS Dependencies -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/shards.min.css?v=3.0.0">
+    <link rel="stylesheet" href="css/shards-extras.min.css?version=3.0.0">
+
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+
+  </head>
+
+  <body width="580px">
+
+        <a name="totop"></a>
+
+        <!-- Шапка -->
+        <div id="AhkSettingsNav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="AhkSettingsNav">
+          <a class="navbar-brand" href="#">
+            <span style="font-size: x-large;">Themis - Настройки</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto"></ul>
+            <button id="AHKButtonClose" class="btn btn-outline-danger btn-sm btn-squared"><i class="fa fa-close"></i></button>
+          </div>
+        </nav>
+      </div>
+
+        <!-- Навигация -->
+        <ul class="nav justify-content-center my-3" style="font-size: medium;">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Главное</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#info_license">Информация о Вашей копии</a>
+              <a class="dropdown-item" href="#version_info">Информация о версии</a>
+              <a class="dropdown-item" href="#main-info">Основная информация</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#settings_sound">Звук и уведомления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#settings_text_notify">Текстовые уведомления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#settings_hotkeys">Горячие клавиши</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#info_commands">Информация о командах</a>
+          </li>
+        </ul>
+
+        <div class="fixed-bottom">
+          <footer class=" text-right text-lg-start">
+            <div class="p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+              <button id="AHKButtonSave" class="btn btn-success btn-sm btn-squared">Сохранить</button>
+              <button id="AHKButtonCancel" class="btn btn-outline-danger btn-sm btn-squared">Отмена</button>
+              <button id="AHKButtonApply" class="btn btn-info btn-sm btn-squared">Применить</button>
+            </div>
+          </footer>
+        </div>  
+        
+        <div class="container mb-5">
+          <div class="dropdown-divider"></div>
+          <div class="row my-5">
+            <h2>Главное</h2>
+          </div>
+        </div>
+
+
+        <!-- Информация о копии -->
+        <div class="container mb-5" style="margin-top: 6em;">
+
+            <h3 id="info_license">Информация о Вашей копии</h3>
+
+            <div class="col-md-12">
+                
+                <form>
+
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label for="form1-name" class="col-form-label">Лицензионный ключ</label>
+                            <input type="text" class="form-control" id="AHKSettings_LicenseKey" placeholder="Name" value="OPEN SOURCE" style="background-color: white;" disabled>
+                        </div>
+ 
+                        <div class="form-group col-md-6">
+                            <label for="form1-name" class="col-form-label">Дата окончания</label>
+                            <input type="text" class="form-control" id="AHKSettings_DateOfEnd" placeholder="Name" value="OPEN SOURCE" style="background-color: white;" disabled>
+                        </div>
+                  
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- Информация о версии -->
+        <div class="container mb-5">
+
+            <h3 id="version_info">Информация о версии</h3>
+
+            <div class="col-md-12">
+                
+                <form>
+
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label for="form1-name" class="col-form-label">Текущая версия</label>
+                            <input type="text"class="form-control" id="AHKSettings_CurrentVersion" value="НЕ ПОДДЕРЖИВАЕТСЯ" style="background-color: white;" disabled>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="form1-name" class="col-form-label">Предыдущая версия</label>
+                            <input type="text" class="form-control" id="AHKSettings_PreviousVersion" value="НЕ ПОДДЕРЖИВАЕТСЯ" style="background-color: white;" disabled>
+                        </div>
+                  
+                    </div>
+
+                </form>
+
+            </div>
+            
+        </div>
+
+        <!-- Основная информация -->
+        <div class="container mb-5">
+
+                <h3 id="main-info">Основная информация</h3>
+
+                <div class="row">
+
+                    <div class="col-md-6 dropdown">
+                        <label for="form1-name" class="col-form-label">Игровой сервер</label>
+                    <fieldset>
+                        <select id="AHKSettings_AmazingServer" class="custom-select w-100" required="">
+                            <option value="-1">Выберите игровой сервер</option>
+                            <option value="0">RED</option>
+                            <option value="1">YELLOW</option>
+                            <option value="2">GREEN</option>
+                            <option value="3">AZURE</option>
+                            <option value="4">SILVER</option>
+                            <option value="5">ROSE</option>
+                        </select>
+                    </fieldset>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="form1-name" class="col-form-label">Путь к игре</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-folder-open" aria-hidden="true"></i></span>
+                              </div>
+                            <input type="text" class="form-control" id="AHKSettings_GamePath" value="" aria-label="Recipient's username" aria-describedby="basic-addon2" style="background-color: white;" readonly>
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-success" id="AHKButtonGamePath" type="button">...</button>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="AHKSettings_Nickname" class="col-form-label">Игровой никнейм</label>
+                        <input type="text" class="form-control" id="AHKSettings_Nickname" value="Alexsandr_Degtyarev" style="background-color: white;" disabled>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="container mb-5">
+          <div class="dropdown-divider"></div>
+          <div class="row my-5">
+            <h2 id="settings_sound">Основные</h2>
+          </div>
+        </div>
+
+        <div class="container mb-5">
+          
+          <h3 class="mb-4">Работа по репортам</h2>
+
+          <div class="row">
+    
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_AutoReport" name="AHKSettings_CheckBox_AutoReport" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_AutoReport">Автоматическая отправка ответа на репорт</label>
+                </div>
+    
+            </div>
+          
+          </div>
+
+          <div class="row">
+    
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_AutoReportSpec" name="AHKSettings_CheckBox_AutoReportSpec" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_AutoReportSpec">Автоматический переход в спек после ответа на репорт</label>
+                </div>
+    
+            </div>
+          
+          </div>
+
+          <div class="row my-2">
+  
+            <div class="col">
+    
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-4 col-form-label">Максимальный ID рандомного спека</label>
+                <div class="col-sm-4">
+                  <input  class="form-control" id="AHKSettings_Input_MaxRsp" placeholder="Число">
+                </div>
+              </div>
+    
+            </div> 
+    
+          </div>
+
+
+          <h3 class="mb-4 my-3">Работа проверки чата</h3>
+
+          <div class="row">
+    
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_SearchReport" name="AHKSettings_CheckBox_SearchReport" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_SearchReport">Искать репорты</label>
+                </div>
+    
+            </div>
+
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_SearchQuestions" name="AHKSettings_CheckBox_SearchQuestions" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_SearchQuestions">Искать вопросы</label>
+                </div>
+    
+            </div>
+          </div>
+
+
+          <div class="row">
+    
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_SearchCAPS" name="AHKSettings_CheckBox_SearchCAPS" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_SearchCAPS">Искать CAPS LOCK</label>
+                </div>
+    
+            </div>
+
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_SearchKill" name="AHKSettings_CheckBox_SearchKill" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_SearchKill">Искать убийства</label>
+                </div>
+    
+            </div>
+
+          </div>
+
+          <div class="row">
+    
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_SearchAC" name="AHKSettings_CheckBox_SearchAC" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_SearchAC">Искать сообщения античита</label>
+                </div>
+    
+            </div>
+
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_SearchNrpNick" name="AHKSettings_CheckBox_SearchNrpNick" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_SearchNrpNick">Искать сообщения о NonRP никах</label>
+                </div>
+    
+            </div>
+          </div>
+        
+        </div>
+
+        <div class="container mb-5">
+          <div class="dropdown-divider"></div>
+          <div class="row my-5">
+            <h2 id="settings_text_notify">Интерфейс</h2>
+          </div>
+        </div>
+
+        <div class="container mb-5">
+          
+          <h4 class="mb-4 my-3">Настройки интерфейса</h4>
+
+          <div class="row my-4">
+
+            <div class="col" id="Notify_Kill">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_EnableInterface" name="AHKSettings_CheckBox_EnableInterface" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_EnableInterface">Показывать интерфейс</label>
+                </div>
+    
+            </div>
+    
+          </div>
+          
+          <div class="row">
+
+            <div class="col" id="Interface_Report">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_WidgetReport" name="AHKSettings_CheckBox_WidgetReport" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_WidgetReport">Виджет неотвеченных репортов</label>
+                </div>
+    
+            </div>
+    
+            <div class="col" id="Interface_Questions">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_WidgetAsk" name="AHKSettings_CheckBox_WidgetAsk" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_WidgetAsk">Виджет неотвеченных вопросов</label>
+                </div>
+    
+            </div>
+    
+          </div>
+
+          <div class="row">
+
+            <div class="col" id="Interface_InfoReport">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_WidgetInfoRep" name="AHKSettings_CheckBox_WidgetInfoRep" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_WidgetInfoRep">Виджет информации о репорте</label>
+                </div>
+    
+            </div>
+    
+            <div class="col" id="Interface_CR">
+    
+              <div class="custom-control custom-toggle my-2">
+                <input type="checkbox" id="AHKSettings_CheckBox_WidgetContRep" name="AHKSettings_CheckBox_WidgetContRep" class="custom-control-input">
+                <label class="custom-control-label" for="AHKSettings_CheckBox_WidgetContRep">Виджет количества репорта</label>
+                </div>
+    
+            </div>
+    
+          </div>
+
+
+          <h4 class="mb-4 my-3">Тип и расположение</h4>
+
+          <div class="row my-2">
+
+            <div class="col md-6">
+              
+              <label for="form1-name" class="col-form-label"><b>Расположение интерфейса</b></label>
+
+              <div class="form-group mb-2">
+                
+                <div class="dropdown mr-3 md-6">
+                    <fieldset>
+                      <select class="custom-select w-100" required="" id="AHKSettings_Select_IntefracePosition">
+                        <option value="0">Выберите Расположение</option>
+                        <option value="1">Снизу</option>
+                        <option value="2">Справа</option>
+                      </select>
+                    </fieldset>
+                  </div>
+    
+              </div>
+            </div>
+
+          </div>
+
+          <h4 class="mb-4 my-3">Цвета</h4>
+
+          <div class="row">
+          
+            <div class="col" id="Hotkey_Work">
+              
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-4 col-form-label">Основной цвет интерфейса</label>
+                <div class="col-sm-4">
+                  <input class="form-control" id="AHKSettings_Input_MainColor" value="#FFFFFF">
+                </div>
+              </div>
+    
+            </div> 
+    
+          </div>
+
+          <div class="row">
+          
+            <div class="col" id="Hotkey_Work">
+              
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-4 col-form-label">Дополнительный цвет интерфейса</label>
+                <div class="col-sm-4">
+                  <input class="form-control" id="AHKSettings_Input_SecondColor" value="#FFFFFF">
+                </div>
+              </div>
+    
+            </div> 
+    
+          </div>
+
+          <div class="row">
+          
+            <div class="col" id="Hotkey_Work">
+              
+              <div class="form-group row">
+                <label for="inputPassword" class="col-sm-4 col-form-label">Цвет фона интерфейса</label>
+                <div class="col-sm-4">
+                  <input  class="form-control" id="AHKSettings_Input_BackColor" placeholder="Цвет в формате 99000000 (HEX)">
+                  <a href="microsoft-edge:https://csscolor.ru/">Здесь можно подобрать цвет в таком формате</a>
+                </div>
+              </div>
+    
+            </div> 
+    
+          </div>
+
+        </div>
+
+        <div class="container mb-5">
+          <div class="dropdown-divider"></div>
+          <div class="row my-5">
+            <h2 id="settings_sound">Звук и уведомления</h2>
+          </div>
+        </div>
+    
+        <!-- Звук и уведомления -->
+    <div class="container mb-5">
+
+      <div class="row">
+
+        <div class="col-md-6" id="Sound_Report">
+
+          <h2 class="mb-4">Репорт</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundNewReport" name="AHKSettings_CheckBox_SoundNewReport" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundNewReport">Уведомления о новом репорте</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" id="AHKSettings_Select_ReportSound" required="">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_Report">Прослушать</button>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6" id="Sound_Questions">
+
+          <h2 class="mb-4">Вопросы</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundNewAsk" name="AHKSettings_CheckBox_SoundNewAsk" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundNewAsk">Уведомления о новых вопросах</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" id="AHKSettings_Select_AskSound" required="">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_Ask">Прослушать</button>
+          </div>
+          
+        </div>
+
+        
+
+      </div>
+
+      <div class="row my-5">
+
+        <div class="col-md-6" id="Sound_Kill">
+
+          <h2 class="mb-4">Убийства</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundKill" name="AHKSettings_CheckBox_SoundKill" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundKill">Уведомления о новом убийстве</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" id="AHKSettings_Select_KillSound" required="">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_Kill">Прослушать</button>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6" id="Sound_CAPS">
+
+          <h2 class="mb-4">CAPS LOCK</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundCAPS" name="AHKSettings_CheckBox_SoundCAPS" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundCAPS">Уведомления о новом CAPS LOCK</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" id="AHKSettings_Select_CAPSSound" required="">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_CAPS">Прослушать</button>
+          </div>
+          
+        </div>
+
+        
+
+      </div>
+
+      <div class="row my-5">
+
+        <div class="col-md-6" id="Sound_Nick">
+
+          <h2 class="mb-4">NonRP никнейм</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundNick" name="AHKSettings_CheckBox_SoundNick" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundNick">Уведомления о новом NonRP никнейме</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" required="" id="AHKSettings_Select_NickSound">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_Nick">Прослушать</button>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6" id="Sound_AC">
+
+          <h2 class="mb-4">Античит</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundAntiCheat" name="AHKSettings_CheckBox_SoundAntiCheat" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundAntiCheat">Уведомления античита</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" required="" id="AHKSettings_Select_AntiCheatSound">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_AntiCheat">Прослушать</button>
+          </div>
+          
+        </div>
+
+        
+
+      </div>
+
+      <div class="row my-5">
+
+        <div class="col-md-6" id="Sound_TipOff">
+
+          <h2 class="mb-4">Наводки</h2>
+
+          <div class="custom-control custom-toggle my-2">
+          <input type="checkbox" id="AHKSettings_CheckBox_SoundTipOff" name="AHKSettings_CheckBox_SoundTipOff" class="custom-control-input">
+          <label class="custom-control-label" for="AHKSettings_CheckBox_SoundTipOff">Уведомления о новой наводке</label>
+          </div>
+
+          <label for="form1-name" class="col-form-label">Звук</label>
+          <div class="form-inline">
+            <div class="form-group mb-2">
+              
+              <div class="dropdown mr-3 md-6">
+                  <fieldset>
+                    <select class="custom-select w-100" required="" id="AHKSettings_Select_TipOffSound">
+                      <option value="0">Выберите звук</option>
+                      <option value="1">Короткий писк</option>
+                      <option value="2">Красивый мелодичный</option>
+                      <option value="3">Мелодичное SMS</option>
+                      <option value="4">Мелодичный спокойный</option>
+                      <option value="5">Новое сообщение</option>
+                      <option value="6">Чпок-динь</option>
+                      <option value="7">Колокольчики</option>
+                      <option value="8">Космический</option>
+                      <option value="9">Пик</option>
+                      <option value="10">Одноклассники</option>
+                      <option value="11">Предостерегающий</option>
+                      <option value="12">Приятный</option>
+                      <option value="13">Спокойный</option>
+                      <option value="14">Ошибка</option>
+                      <option value="15">Почта</option>
+                      <option value="16">Сообщение</option>
+                      <option value="17">Кнопочный телефон</option>
+                      <option value="18">Яркий чёткий</option>
+                      <option value="19">Звонкий короткий</option>
+                      <option value="20">Звонкое уведомление</option>
+                      <option value="21">Доставленное сообщение</option>
+                      <option value="22">Музыкальный</option>
+                      <option value="23">Выход</option>
+                      <option value="24">PDA 1</option>
+                      <option value="25">PDA 2</option>
+                    </select>
+                  </fieldset>
+                </div>
+
+            </div>
+            <button class="btn btn-success mb-2" id="AHKButton_Listen_TipOff">Прослушать</button>
+          </div>
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+    <div class="container mb-5">
+      <div class="dropdown-divider"></div>
+      <div class="row my-5">
+        <h2 id="settings_text_notify">Текстовые уведомления</h2>
+      </div>
+    </div>
+      
+    </div>
+
+    <!-- Текстовые уведомления -->
+    <div class="container mb-5">
+
+      <h3 class="mb-4">Основные уведомления</h2>
+
+      <div class="row">
+
+        <div class="col" id="Notify_Kill">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_NotifyKill" name="AHKSettings_CheckBox_NotifyKill" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_NotifyKill">Уведомления о новом убийстве</label>
+            </div>
+
+        </div>
+
+        <div class="col" id="Notify_CAPS">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_NotifyCAPS" name="AHKSettings_CheckBox_NotifyCAPS" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_NotifyCAPS">Уведомления о новом CAPS LOCK (CAPS)</label>
+            </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Notify_Nick">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_NotifyNick" name="AHKSettings_CheckBox_NotifyNick" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_NotifyNick">Уведомления о новом NonRP никнейме</label>
+            </div>
+
+        </div>
+
+        <div class="col" id="Notify_AC">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_NotifyAntiCheat" name="AHKSettings_CheckBox_NotifyAntiCheat" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_NotifyAntiCheat">Уведомления о работе античита</label>
+            </div>
+
+        </div>
+
+      </div>
+
+      <h3 class="mb-4 my-3">Прочее</h2>
+
+      <div class="row">
+
+        <div class="col" id="Notify_First">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_NotifyFirstAns" name="AHKSettings_CheckBox_NotifyFirstAns" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_NotifyFirstAns">Уведомления о ответе на репорт/вопрос первым</label>
+            </div>
+
+        </div>
+
+        <div class="col" id="Notify_TipOff">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_NotifyTipOff" name="AHKSettings_CheckBox_NotifyTipOff" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_NotifyTipOff">Уведомления о наводках</label>
+            </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+    
+        <div class="col" id="Notify_Kill">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_ACSend" name="AHKSettings_CheckBox_ACSend" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_ACSend">Оповещения в /a о начале работы</label>
+            </div>
+
+        </div>
+      
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Notify_Kill">
+
+          <div class="custom-control custom-toggle my-2">
+            <input type="checkbox" id="AHKSettings_CheckBox_5min" name="AHKSettings_CheckBox_5min" class="custom-control-input">
+            <label class="custom-control-label" for="AHKSettings_CheckBox_5min">Напоминание после 5 минут без репорта</label>
+            </div>
+
+        </div>
+      
+      </div>
+
+    </div>
+
+    <div class="container mb-5">
+      <div class="dropdown-divider"></div>
+      <div class="row my-5">
+        <h2 id="settings_hotkeys">Горячие клавиши</h2>
+      </div>
+    </div>
+
+    <div class="container mb-5">
+
+      <div class="row">
+        <div class="col">
+          <h3>Основные клавиши</h3>
+        </div>
+      </div>
+
+      <div class="row my-2">
+
+        <div class="col">
+
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#howHotkeys">
+            Как вводить горячие клавиши?
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="row my-3">
+
+        <div class="col" id="Hotkey_Work">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Начало работы (текущий репорт)</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_HotkeyCurrentReport" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_WorkP">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Начало работы (предыдущий репорт)</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_HotkeyPrevReport" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_NG">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Пожелать хорошей игры</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_HotkeyNiceGame" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_NV">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Сообщение о отсутствии нарушений</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_HotkeyNoViolat" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_P">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Сообщение о наказании нарушителя</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_HotkeyPunish" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_AID">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Ввод в чат /ans ID (текущий репорт)</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_AnsIDCurrent" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_AIDP">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Ввод в чат /ans ID (предыдущий репорт)</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_AnsIDPrev" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_H1" style="display: none;">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Ввод в чат /ans ID (вопросы)</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_AnsID_Question" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+      <div class="row">
+
+        <div class="col" id="Hotkey_H1P" style="display: none;">
+
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-4 col-form-label">Ввод в чат /ans ID (вопросы. предыдущий)</label>
+            <div class="col-sm-4">
+              <input  class="form-control" id="AHKSettings_Input_AnsID_Question_Prev" placeholder="Клавиша, либо комбинация">
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+
+    </div>  
+
+      <div class="container mb-5">
+        <div class="dropdown-divider"></div>
+      </div>
+      
+      <div class="container mb-5" id="Fast_Work">
+
+        <div class="row">
+          <div class="col">
+            <h3>Быстрые действия</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          
+          <div class="col" id="Hotkey_Work">
+            
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Слежка за последним убийством</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyKill" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Предупредить за CAPS LOCK (CAPS)</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyCAPS" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Попросить сменить NonRP никнейм</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyNick" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Слежка по античиту</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyCheat" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+  
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Получить наводку</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyTipOff" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Клавиша /getpcar</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyGetpcar" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Клавиша /flip</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyFlip" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Клавиша /gruz</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeyGruz" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Клавиша /slap</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_HotkeySlap" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Клавиша перехода в спек по последнему репорту</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_RepSpec" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+        <div class="row">
+  
+          <div class="col">
+  
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-4 col-form-label">Клавиша рандомного спека</label>
+              <div class="col-sm-4">
+                <input  class="form-control" id="AHKSettings_Input_SpRandom" placeholder="Клавиша, либо комбинация">
+              </div>
+            </div>
+  
+          </div> 
+  
+        </div>
+
+    </div>
+
+    <div class="container mb-5">
+      <div class="dropdown-divider"></div>
+      <div class="row my-5">
+        <h2 id="info_commands">Команды</h2>
+      </div>
+    </div>
+
+    <div class="container mb-5">
+
+      <div class="row">
+
+        <div class="col">
+
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">№</th>
+                <th scope="col">Команда</th>
+                <th scope="col">Пример использования</th>
+                <th scope="col">Описание</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><code>/getrep</code></td>
+                <td>/getrep 101</td>
+                <td>Получить информацию о репорте от игрока (ID)</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td><code>/getask</code></td>
+                <td>/getask 10</td>
+                <td>Получить информацию о вопросе от игрока (ID)</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td><code>/delrep</code></td>
+                <td>/delrep</td>
+                <td>Очистить список репортов и вопросов</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td><code>/thsend</code></td>
+                <td>/thsend /a >wave  <kbd>Space</kbd></td>
+                <td>Отправить сообщение в чат через Themis</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td><code>/getsmiles</code></td>
+                <td>/getsmiles</td>
+                <td>Получить список предустановленных смайликов</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td><code>/thc</code></td>
+                <td>/thc Привет, мир!  <kbd>Enter</kbd></td>
+                <td>Отправить сообщение в чат Themis</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td><code>/rsp</code></td>
+                <td>/rsp <kbd>Enter</kbd></td>
+                <td>Переход в спек за рандомным игроком</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="howHotkeys" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Как же вводить горячие клавиши?</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Ввод горячих клавиш реализован как в AHK<br>
+            <br>
+            Например для клавиши <kbd>NumPad7</kbd> введите - <strong>NumPad7</strong><br>
+            А для комбинации клавиш <kbd><kbd>Ctrl</kbd> + <kbd>1</kbd></kbd> введите - <strong>^1</strong><br>
+            <br>
+            Подробнее о клавишах - <a href="microsoft-edge:https://www.autohotkey.com/docs/v1/Hotkeys.htm">AutoHotKey - Hotkeys</a><br>
+            <a href="microsoft-edge:https://ahk-wiki.ru/hotkeys" class="small">AutoHotKey - Hotkeys (на русском)</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-success" data-dismiss="modal">Я всё понял!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script type="text/javascript">
+
+    </script>
+
+    <!-- JavaScript Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  </body>
+
+</html>

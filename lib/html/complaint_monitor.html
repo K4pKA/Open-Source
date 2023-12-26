@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shards - Agency Landing Page built with Shards - A Modern UI Toolkit</title>
+    <meta name="description" content="A demo landing page for agencies or product oriented businesses built using Shards, a free, modern and lightweight UI toolkit based on Bootstrap 4.">
+    <meta name="viewport" content="width=650, initial-scale=1">
+
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/shards.min.css?v=3.0.0">
+    <link rel="stylesheet" href="css/shards-extras.min.css?version=3.0.0">
+
+    <style>
+      body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      .my-custom-scrollbar {
+        position: relative;
+        height: 630px;
+        overflow: auto;
+        overflow-x: hidden;
+        }
+        .table-wrapper-scroll-y {
+        display: block;
+        }
+        .container {
+            max-width: 95%;
+        }
+
+        nav {
+            max-height: 80px;
+        }
+
+        
+
+        table.dataTable thead .sorting:after,
+        table.dataTable thead .sorting:before,
+        table.dataTable thead .sorting_asc:after,
+        table.dataTable thead .sorting_asc:before,
+        table.dataTable thead .sorting_asc_disabled:after,
+        table.dataTable thead .sorting_asc_disabled:before,
+        table.dataTable thead .sorting_desc:after,
+        table.dataTable thead .sorting_desc:before,
+        table.dataTable thead .sorting_desc_disabled:after,
+        table.dataTable thead .sorting_desc_disabled:before {
+        bottom: .5em;
+        }
+
+        .card {
+            border-radius: 0;
+        }
+
+
+        .alert.zoom {
+        animation: zoom forwards 0.7s ease-out 1;
+        }
+
+
+
+    </style>
+
+  </head>
+
+  <body width="580px">
+
+        <!-- Шапка -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="#">
+            <span style="font-size: large;">Themis - Монитор неотвеченных запросов</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto"></ul>
+            <button id="AHKMonitorButtonClose" class="btn btn-outline-danger btn-sm btn-squared"><i class="fa fa-close"></i></button>
+        </div>
+        </nav>
+
+        <div class="container my-3">
+        
+            <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="tab" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Репорт</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="tab" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="true">Вопросы</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+
+                        <div class="row">
+                            <h3>Репорты</h3>
+                        </div>
+            
+                        <div class="row my-3">
+            
+                            <div class="col">
+            
+                                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                                    
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-danger btn-sm btn-squared" id="AHKButton_DeleteRep">Удалить</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm btn-squared" id="AHKButton_DeleteAllRep">Удалить всё</button>
+                                    </div>
+            
+                                    <table class="table table-bordered table-striped mb-0 table-hover my-2 table-sm small" id="table_rep" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr class="">
+                                                <th class="th-sm">
+            
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="selectAllReport">
+                                                        <label class="form-check-label" for="selectAllReport"></label>
+                                                    </div>
+            
+                                                </th>
+                                                <th class="th-sm">ID</th>
+                                                <th class="th-sm">Никнейм</th>
+                                                <th class="th-sm">Дата и время</th>
+                                                <th class="th-sm">Контент</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody-report">
+                                        </tbody>
+                                    </table>  
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+
+                        <div class="row">
+                            <h3>Вопросы</h3>
+                        </div>
+            
+                        <div class="row my-3">
+            
+                            <div class="col">
+            
+                                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                                    
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-danger btn-sm btn-squared" id="AHKButton_DeleteAsk">Удалить</button>
+                                        <button type="button" class="btn btn-outline-danger btn-sm btn-squared" id="AHKButton_DeleteAllAsk">Удалить всё</button>
+                                    </div>
+            
+                                    <table class="table table-bordered table-striped mb-0 table-hover my-2 table-sm small" id="table_ask" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr class="">
+                                                <th class="th-sm">
+            
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="selectAllAsk">
+                                                        <label class="form-check-label" for="selectAllAsk"></label>
+                                                    </div>
+            
+                                                </th>
+                                                <th class="th-sm">ID</th>
+                                                <th class="th-sm">Никнейм</th>
+                                                <th class="th-sm">Дата и время</th>
+                                                <th class="th-sm">Контент</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody-report">
+                                        </tbody>
+                                    </table>  
+                                </div>
+            
+                            </div>
+            
+                        </div>
+            
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="container" id="alert_placeholder" style="position: fixed; right: 10px; bottom: 50px; max-width: 45%; max-height: 70%;">
+        </div>
+
+        <div class="fixed-bottom">
+            <footer class=" text-right text-lg-start">
+              <div class="p-2" style="background-color: rgba(0, 0, 0, 0.2);">
+                <button id="AHKMonitorButtonCancel" class="btn btn-outline-danger btn-sm btn-squared">Я хочу закрыть этот прекрасный монитор</button>
+              </div>
+            </footer>
+          </div>
+        
+        <!-- JavaScript Dependencies -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/v/bs4/jq-3.6.0/dt-1.13.4/datatables.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script>
+        var init = 0;
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            if (init == 0) {
+            $(document).ready(function () {$('#table_ask').DataTable({"aaSorting": [], columnDefs: [{orderable: false, targets: 0}], searching: false, paging: false, info: false});$('.dataTables_length').addClass('bs-select');});    
+            init = 1;
+        }
+        })
+        $(document).ready(function () {$('#table_rep').DataTable({"aaSorting": [], columnDefs: [{orderable: false, targets: 0}], searching: false, paging: false, info: false});$('.dataTables_length').addClass('bs-select');});
+        </script>
+
+        <script>
+
+            document.getElementById("selectAllReport").onchange = function(e) {
+                var a = document.getElementById("table_rep").getElementsByTagName('input');
+                for (var z = 0; z < a.length; z++) {
+                    a[z].checked = (e.target.checked == true) ? true: false;
+                }
+            }
+            
+            function allCheckReport() {
+                var a = document.getElementById("table_rep").getElementsByTagName('input');
+                for (var z = 0; z < a.length; z++) {
+                    a[z].checked = true;
+                }
+            }
+
+            function allCheckAsk() {
+                var a = document.getElementById("table_ask").getElementsByTagName('input');
+                for (var z = 0; z < a.length; z++) {
+                    a[z].checked = true;
+                }
+            }
+
+            document.getElementById("selectAllAsk").onchange = function(e) {
+                var a = document.getElementById("table_ask").getElementsByTagName('input');
+                for (var z = 0; z < a.length; z++) {
+                    a[z].checked = (e.target.checked == true) ? true: false;
+                }
+            }
+
+        </script>
+
+        <script>
+            
+            function addElementToReport(id, nickname, date_time, content) {
+                var tbodyRef = document.getElementById('table_rep').getElementsByTagName('tbody')[0];
+                
+                var row = tbodyRef.insertRow();
+                row.insertCell(0).innerHTML = '<div class="form-check"><input class="form-check-input" type="checkbox" value="" id="ReportID' + id + '"><label class="form-check-label" for="ReportID' + id + '"></label></div>';
+                row.insertCell(1).innerHTML = id;
+                row.insertCell(2).innerHTML = nickname; row.insertCell(3).innerHTML = date_time;
+                row.insertCell(4).innerHTML = content;
+            }
+
+            function addElementToAsk(id, nickname, date_time, content) {
+                var tbodyRef = document.getElementById('table_ask').getElementsByTagName('tbody')[0];
+                
+                var row = tbodyRef.insertRow();
+                row.insertCell(0).innerHTML = '<div class="form-check"><input class="form-check-input" type="checkbox" value="" id="ReportID' + id + '"><label class="form-check-label" for="ReportID' + id + '"></label></div>';
+                row.insertCell(1).innerHTML = id;
+                row.insertCell(2).innerHTML = nickname; row.insertCell(3).innerHTML = date_time;
+                row.insertCell(4).innerHTML = content;
+            }
+
+            function clearReport() {
+                document.getElementById("table_rep").getElementsByTagName("tbody")[0].innerHTML = "";
+            }
+
+            function clearAsk() {
+                document.getElementById("table_ask").getElementsByTagName("tbody")[0].innerHTML = "";
+            }
+
+            showAlert = function(){};
+
+            showAlert.primary = function(message) {
+
+                rnd_number = String(Math.floor(Math.random() * (1000000 - 0 + 1) + 0));
+                const div = document.createElement('div');
+                div.className = 'alert alert-primary rounded alert-dismissible fade show';
+                div.dataset.delete = "zoom";
+                div.role = 'alert';
+                div.id = 'alert_' + rnd_number;
+                div.innerHTML = '<span class="mr-4">' + message +'</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                document.getElementById("alert_placeholder").appendChild(div);
+
+                setTimeout( function () {
+                    var el = document.getElementById(div.id);
+                    el.classList.remove('show');
+                    setTimeout( function () {
+                        var Parent = document.getElementById("alert_placeholder").appendChild(div);
+                        Parent.parentNode.removeChild(el);
+                    }, 2000)
+                }, 3000);
+
+            }
+            showAlert.secondary = function(message) {
+                rnd_number = String(Math.floor(Math.random() * (1000000 - 0 + 1) + 0));
+                const div = document.createElement('div');
+                div.className = 'alert alert-secondary rounded alert-dismissible fade show';
+                div.dataset.delete = "zoom";
+                div.role = 'alert';
+                div.id = 'alert_' + rnd_number;
+                div.innerHTML = '<span class="mr-4">' + message +'</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                document.getElementById("alert_placeholder").appendChild(div);
+
+                setTimeout( function () {
+                    var el = document.getElementById(div.id);
+                    el.classList.remove('show');
+                    setTimeout( function () {
+                        var Parent = document.getElementById("alert_placeholder").appendChild(div);
+                        Parent.parentNode.removeChild(el);
+                    }, 2000)
+                }, 3000);
+            }
+            
+            showAlert.success = function(message) {
+                rnd_number = String(Math.floor(Math.random() * (1000000 - 0 + 1) + 0));
+                const div = document.createElement('div');
+                div.className = 'alert alert-success rounded alert-dismissible fade show';
+                div.dataset.delete = "zoom";
+                div.role = 'alert';
+                div.id = 'alert_' + rnd_number;
+                div.innerHTML = '<span class="mr-4">' + message +'</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                document.getElementById("alert_placeholder").appendChild(div);
+
+                setTimeout( function () {
+                    var el = document.getElementById(div.id);
+                    el.classList.remove('show');
+                    setTimeout( function () {
+                        var Parent = document.getElementById("alert_placeholder").appendChild(div);
+                        Parent.parentNode.removeChild(el);
+                    }, 2000)
+                }, 3000);    
+            }
+
+            showAlert.danger = function(message) {
+                rnd_number = String(Math.floor(Math.random() * (1000000 - 0 + 1) + 0));
+                const div = document.createElement('div');
+                div.className = 'alert alert-danger rounded alert-dismissible fade show';
+                div.dataset.delete = "zoom";
+                div.role = 'alert';
+                div.id = 'alert_' + rnd_number;
+                div.innerHTML = '<span class="mr-4">' + message +'</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                document.getElementById("alert_placeholder").appendChild(div);
+
+                setTimeout( function () {
+                    var el = document.getElementById(div.id);
+                    el.classList.remove('show');
+                    setTimeout( function () {
+                        var Parent = document.getElementById("alert_placeholder").appendChild(div);
+                        Parent.parentNode.removeChild(el);
+                    }, 2000)
+                }, 3000);
+            }
+
+            showAlert.warning = function(message) {
+                rnd_number = String(Math.floor(Math.random() * (1000000 - 0 + 1) + 0));
+                const div = document.createElement('div');
+                div.className = 'alert alert-warning rounded alert-dismissible fade show';
+                div.dataset.delete = "zoom";
+                div.role = 'alert';
+                div.id = 'alert_' + rnd_number;
+                div.innerHTML = '<span class="mr-4">' + message +'</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                document.getElementById("alert_placeholder").appendChild(div);
+
+                setTimeout( function () {
+                    var el = document.getElementById(div.id);
+                    el.classList.remove('show');
+                    setTimeout( function () {
+                        var Parent = document.getElementById("alert_placeholder").appendChild(div);
+                        Parent.parentNode.removeChild(el);
+                    }, 2000)
+                }, 3000);
+            }
+
+            showAlert.info = function(message) {
+                rnd_number = String(Math.floor(Math.random() * (1000000 - 0 + 1) + 0));
+                const div = document.createElement('div');
+                div.className = 'alert alert-info rounded alert-dismissible fade show';
+                div.dataset.delete = "zoom";
+                div.role = 'alert';
+                div.id = 'alert_' + rnd_number;
+                div.innerHTML = '<span class="mr-4">' + message +'</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+
+                document.getElementById("alert_placeholder").appendChild(div);
+
+                setTimeout( function () {
+                    var el = document.getElementById(div.id);
+                    el.classList.remove('show');
+                    setTimeout( function () {
+                        var Parent = document.getElementById("alert_placeholder").appendChild(div);
+                        Parent.parentNode.removeChild(el);
+                    }, 2000)
+                }, 3000);
+            }
+
+            
+
+        </script>
+  </body>
+
+</html>
