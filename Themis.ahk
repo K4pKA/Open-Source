@@ -70,7 +70,7 @@ loader := new Loader()
 global ACCESS_LEVEL := 0
 
 global CRMP_USER_NICKNAME := ""
-RegRead, CRMP_USER_NICKNAME, HKEY_CURRENT_USER, SOFTWARE\Amazing\Russia\Nicknames, %AMAZING_SERVER%
+RegRead, CRMP_USER_NICKNAME, HKEY_CURRENT_USER, SOFTWARE\Amazing\vcn\Online\Saves\Nicknames, %AMAZING_SERVER%
 global CHATLOG_PATH := "" . AMAZING_PATH . "\amazing\chatlog.txt"
 global CHATLOGS_PATH := A_MyDocuments "\Themis\chatlogs"
 global THEMIS_PATH := A_ScriptDir
